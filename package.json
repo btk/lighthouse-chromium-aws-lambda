@@ -7,7 +7,7 @@
 		"type": "git",
 		"url": "https://github.com/BorderTech/lighthouse-chromium.git"
 	},
-	"author": "",
+	"author": "Rick Brown",
 	"license": "MIT",
 	"dependencies": {
 		"chromium": "2.1.2",

@@ -3,7 +3,15 @@
  * lighthouse will use the dynamically installed version of Chromium.
  */
 const chromium = require('chromium');
+const lighthouse = require('lighthouse');
 
-process.env.CHROME_PATH = chromium.path;
+// The important bit, set the path to the Chrome binary and expose it on the export too, just in case.
+lighthouse.CHROME_PATH = process.env.CHROME_PATH = chromium.path;
 
-require('lighthouse/lighthouse-cli');
+if (require.main === module) {
+	// Module called directly, not via "require", so execute cli
+	require('lighthouse/lighthouse-cli');
+}
+
+// Allow programmatic use
+module.exports = lighthouse;
