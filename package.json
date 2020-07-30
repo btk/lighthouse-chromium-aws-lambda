@@ -3,6 +3,12 @@
 	"version": "1.0.0",
 	"description": "Lighthouse runner with browser included",
 	"main": "index.js",
+	"bin": {
+		"lighthouse": "./bin/index.js"
+	},
+	"scripts": {
+		"test": "eslint . && ava"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/BorderTech/lighthouse-chromium.git"
@@ -10,7 +16,11 @@
 	"author": "Rick Brown",
 	"license": "MIT",
 	"dependencies": {
-		"chromium": "2.1.2",
+		"chromium": "2.2.0",
 		"lighthouse": "6.1.1"
+	},
+	"devDependencies": {
+		"ava": "3.11.0",
+		"eslint": "7.5.0"
 	}
 }

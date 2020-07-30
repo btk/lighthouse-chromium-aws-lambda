@@ -3,6 +3,8 @@
 Wrapper around [lighthouse](https://github.com/GoogleChrome/lighthouse) that means there is no need to have Chrome installed where you are running it.
 It will automatically download and install Chromium.
 
+[![Build Status](https://travis-ci.com/BorderTech/lighthouse-chromium.svg?branch=master)](https://travis-ci.com/BorderTech/lighthouse-chromium)
+
 ## Using the Node CLI
 
 Simply use it as you would use lighthouse. Everything is passed through. Read the [lighthouse documentation](https://github.com/GoogleChrome/lighthouse#lighthouse-----).
@@ -10,7 +12,8 @@ Simply use it as you would use lighthouse. Everything is passed through. Read th
 For example:
 
 ```bash
- npx lighthouse-chromium http://www.bom.gov.au/tas/forecasts/hobart.shtml --chrome-flags="--headless"
+npm install -g lighthouse-chromium
+lighthouse http://www.bom.gov.au/tas/forecasts/hobart.shtml --chrome-flags="--headless"
 ```
 
 ## Using programmatically
@@ -24,7 +27,7 @@ Instead of requiring `lighthouse` require `lighthouse-chromium`:
 const lighthouse = require('lighthouse-chromium');
 ```
 
-The only difference, which you probably won't need, is that lighthouse has an extra property, `CHROME_PATH` which points to the dynamically installed chromium binary:
+The only difference, which you probably won't need, is that lighthouse has the property `.CHROME_PATH` which points to the dynamically installed chromium binary:
 
 ```js
 const chromeLauncher = require('chrome-launcher');
@@ -33,10 +36,29 @@ const chromeLauncher = require('chrome-launcher');
 const chrome = await chromeLauncher.launch({ chromePath: lighthouse.CHROME_PATH });
 ```
 
-## Download Chromium from Mirror
+## Configuration
 
-Coming soon
+### Environment variables
 
-## Download a specific Chromium Revision
+`CHROMIUM_REVISION` - install a specific Chromium revision:
 
-Coming soon
+```bash
+export CHROMIUM_REVISION=768783
+```
+
+`CHROMIUM_DOWNLOAD_HOST` - download from a mirror:
+
+```bash
+export CHROMIUM_DOWNLOAD_HOST=https://npm.taobao.org/mirrors/chromium-browser-snapshots/
+```
+
+### NPM config
+
+Lower-case variants of the [environment variables](#environment-variables) may be set in your .npmrc:
+
+```ini
+chromium_download_host=https://npm.taobao.org/mirrors/chromium-browser-snapshots/
+chromium_revision=768783
+```
+
+If the both environment variable and npmrc are set then npmrc takes precedence.
