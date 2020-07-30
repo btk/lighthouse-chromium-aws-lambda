@@ -1,0 +1,16 @@
+{
+	"name": "lighthouse-chromium",
+	"version": "1.0.0",
+	"description": "Lighthouse runner with browser included",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BorderTech/lighthouse-chromium.git"
+	},
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"chromium": "2.1.2",
+		"lighthouse": "6.1.1"
+	}
+}
