@@ -4,6 +4,7 @@ Wrapper around [lighthouse](https://github.com/GoogleChrome/lighthouse) that mea
 It will automatically download and install Chromium.
 
 [![Build Status](https://travis-ci.com/BorderTech/lighthouse-chromium.svg?branch=master)](https://travis-ci.com/BorderTech/lighthouse-chromium)
+[![npm version](https://badge.fury.io/js/lighthouse-chromium.svg)](https://badge.fury.io/js/lighthouse-chromium)
 
 ## Using the Node CLI
 
@@ -38,18 +39,22 @@ const chrome = await chromeLauncher.launch({ chromePath: lighthouse.CHROME_PATH 
 
 ## Configuration
 
+The Chromium download is handled by [node_chromium](https://github.com/dtolstyi/node-chromium) - please see that project page for further configuration details.
+
 ### Environment variables
 
-`CHROMIUM_REVISION` - install a specific Chromium revision:
+Since 2.0.0 the environment variable prefix changed from `CHROMIUM_`  to `NODE_CHROMIUM_`
+
+`NODE_CHROMIUM_REVISION` - install a specific Chromium revision:
 
 ```bash
-export CHROMIUM_REVISION=768783
+export NODE_CHROMIUM_REVISION=768783
 ```
 
-`CHROMIUM_DOWNLOAD_HOST` - download from a mirror:
+`NODE_CHROMIUM_DOWNLOAD_HOST` - download from a mirror:
 
 ```bash
-export CHROMIUM_DOWNLOAD_HOST=https://npm.taobao.org/mirrors/chromium-browser-snapshots/
+export NODE_CHROMIUM_DOWNLOAD_HOST=https://npm.taobao.org/mirrors/chromium-browser-snapshots/
 ```
 
 ### NPM config
@@ -57,8 +62,8 @@ export CHROMIUM_DOWNLOAD_HOST=https://npm.taobao.org/mirrors/chromium-browser-sn
 Lower-case variants of the [environment variables](#environment-variables) may be set in your .npmrc:
 
 ```ini
-chromium_download_host=https://npm.taobao.org/mirrors/chromium-browser-snapshots/
-chromium_revision=768783
+node_chromium_download_host=https://npm.taobao.org/mirrors/chromium-browser-snapshots/
+node_chromium_revision=768783
 ```
 
 If the both environment variable and npmrc are set then npmrc takes precedence.
