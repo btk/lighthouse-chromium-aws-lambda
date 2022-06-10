@@ -1,4 +1,4 @@
-const chromium = require("chromium");
+const chromium = require("chrome-aws-lambda");
 const lighthouse = require("lighthouse");
 
 // The important bit, set the path to the chromium binary and expose it on the export too, just in case.

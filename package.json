@@ -1,7 +1,7 @@
 {
-	"name": "lighthouse-chromium",
+	"name": "lighthouse-chromium-aws-lambda",
 	"version": "2.0.0",
-	"description": "Lighthouse runner with browser included",
+	"description": "Lighthouse runner with browser included (aws lambda)",
 	"main": "index.js",
 	"bin": {
 		"lighthouse": "./bin/index.js"
@@ -11,12 +11,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/BorderTech/lighthouse-chromium.git"
+		"url": "https://github.com/btk/lighthouse-chromium-aws-lambda.git"
 	},
 	"author": "Rick Brown",
 	"license": "MIT",
 	"dependencies": {
-		"chromium": "3.0.0",
+		"chrome-aws-lambda": "^10.1.0",
 		"lighthouse": "6.1.1"
 	},
 	"devDependencies": {
