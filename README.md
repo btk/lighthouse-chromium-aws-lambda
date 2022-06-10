@@ -1,7 +1,7 @@
 # lighthouse-chromium
 
 Wrapper around [lighthouse](https://github.com/GoogleChrome/lighthouse) that means there is no need to have Chrome installed where you are running it.
-It will automatically download and install Chromium.
+It will automatically download and install Chromium. Also small enough to work on aws lambda / 50mb
 
 [![Build Status](https://travis-ci.com/BorderTech/lighthouse-chromium.svg?branch=master)](https://travis-ci.com/BorderTech/lighthouse-chromium)
 [![npm version](https://badge.fury.io/js/lighthouse-chromium.svg)](https://badge.fury.io/js/lighthouse-chromium)
@@ -13,7 +13,7 @@ Simply use it as you would use lighthouse. Everything is passed through. Read th
 For example:
 
 ```bash
-npm install -g lighthouse-chromium
+npm install -g lighthouse-chromium-aws-lambda
 lighthouse http://www.bom.gov.au/tas/forecasts/hobart.shtml --chrome-flags="--headless"
 ```
 
@@ -21,11 +21,11 @@ lighthouse http://www.bom.gov.au/tas/forecasts/hobart.shtml --chrome-flags="--he
 
 Simply use it as you would use lighthouse, and read the [lighthouse documentation](https://github.com/GoogleChrome/lighthouse/blob/master/docs/readme.md#using-programmatically).
 
-Instead of requiring `lighthouse` require `lighthouse-chromium`:
+Instead of requiring `lighthouse` require `lighthouse-chromium-aws-lambda`:
 
 ```js
 // const lighthouse = require('lighthouse');
-const lighthouse = require('lighthouse-chromium');
+const lighthouse = require('lighthouse-chromium-aws-lambda');
 ```
 
 The only difference, which you probably won't need, is that lighthouse has the property `.CHROME_PATH` which points to the dynamically installed chromium binary:
