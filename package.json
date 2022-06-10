@@ -17,7 +17,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"chrome-aws-lambda": "^10.1.0",
-		"lighthouse": "6.1.1"
+		"lighthouse": "^9.6.2"
 	},
 	"devDependencies": {
 		"ava": "3.11.0",
