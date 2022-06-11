@@ -1,6 +1,6 @@
 {
 	"name": "lighthouse-chromium-aws-lambda",
-	"version": "2.0.4",
+	"version": "2.0.11",
 	"description": "Lighthouse runner with browser included (small enough to work on aws lambda / 50mb)",
 	"main": "index.js",
 	"bin": {
@@ -17,7 +17,8 @@
 	"license": "MIT",
 	"dependencies": {
 		"chrome-aws-lambda": "~6.0.0",
-		"lighthouse": "6.1.1"
+		"lighthouse": "6.1.1",
+		"puppeteer-core": "6.0.0"
 	},
 	"devDependencies": {
 		"ava": "3.11.0",
